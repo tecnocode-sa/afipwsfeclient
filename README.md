@@ -2,6 +2,8 @@
 AFIP WSFE .NET Standard Client. Manages WSAA Ticket caching and access WSFE operations
 (C) 2019 Tecnocode S.A. http://tecnocode.net
 
+[![Build Status](https://tecnocodearg.visualstudio.com/Tecnocode/_apis/build/status/tecnocode-sa.afipwsfeclient?branchName=master)](https://tecnocodearg.visualstudio.com/Tecnocode/_build/latest?definitionId=7&branchName=master)
+
 ## Installation
 - NuGet 
 https://www.nuget.org/packages/AfipWsfeClient
