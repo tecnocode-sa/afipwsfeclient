@@ -2,6 +2,19 @@
 AFIP WSFE .NET Standard Client. Manages WSAA Ticket caching and access WSFE operations
 (C) 2019 Tecnocode S.A. http://tecnocode.net
 
+## Installation
+- NuGet 
+https://www.nuget.org/packages/AfipWsfeClient
+
+- .NET CLI
+```
+dotnet add package afipwsfeclient
+```
+
+- Package Manager Console
+```
+Install-Package afipwsfeclient
+```
 ## Certificate Generation
 You must provide an pkcs12 certificate file to access AFIP services 
 
