@@ -1,4 +1,4 @@
-﻿# AFIP Web Services
+﻿# AFIP WSFE Web Services Client
 AFIP WSFE .NET Standard Client. Manages WSAA Ticket caching and access WSFE operations
 (C) 2019 Tecnocode S.A. http://tecnocode.net
 
@@ -16,6 +16,7 @@ openssl req -new -key afip.key -subj "/C=AR/O=INSERT_ORG_NAME/CN=INSERT_ORG_CN/s
 ```
 
 - Generate PEM with AFIP website
+
 Upload the CSR file to WSASS AFIP Service and save the resulting text in afip.pem file
 
 - Generate X509 Certificate in pkcs12 format
