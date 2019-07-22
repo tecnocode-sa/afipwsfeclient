@@ -2,28 +2,28 @@
 AFIP WSFE .NET Standard Client. Manages WSAA Ticket caching and access WSFE operations
 (C) 2019 Tecnocode S.A. http://tecnocode.net
 
-# Certificate Generation
+## Certificate Generation
 You must provide an pkcs12 certificate file to access AFIP services 
 
-## Generate Private Key:
+- Generate Private Key:
 ```
 openssl genrsa -out afip.key 2048 
 ```
 
-## Generate Certificate Sign Request:
+- Generate Certificate Sign Request:
 ```
 openssl req -new -key afip.key -subj "/C=AR/O=INSERT_ORG_NAME/CN=INSERT_ORG_CN/serialNumber=CUIT INSERT_CUIT" -out afip.csr
 ```
 
-## Generate PEM with AFIP website
+- Generate PEM with AFIP website
 Upload the CSR file to WSASS AFIP Service and save the resulting text in afip.pem file
 
-## Generate X509 Certificate in pkcs12 format
+- Generate X509 Certificate in pkcs12 format
 ```
 openssl pkcs12 -export -inkey afip.key -in afip.pem -out afip.p12 
 ``` 
 
-# Library usage
+## Library usage
 ```csharp
 using System.Collections.Generic;
 using AfipWsfeClient;
@@ -91,7 +91,7 @@ var feCaeReq = new AfipServiceReference.FECAERequest
 var compResult = await wsfeClient.FECAESolicitarAsync(feCaeReq);
 ```
 
-# LoginCmsClient Class Parameters
+## LoginCmsClient Class Parameters
 ```csharp
 public bool IsProdEnvironment { get; set; } = false; //default is Homologation
 public string WsaaUrlHomologation { get; set; } = "https://wsaahomo.afip.gov.ar/ws/services/LoginCms"; //default URL
@@ -99,7 +99,7 @@ public string WsaaUrlProd { get; set; } = "https://wsaa.afip.gov.ar/ws/services/
 public string TicketCacheFolderPath { get; set; } = ""; //Path to store ticket chache file, default is runtime current path
 ```
 
-# WsfeClient Class Parameters
+## WsfeClient Class Parameters
 ```csharp
 public bool IsProdEnvironment { get; set; } = false; //default is Homologation
 public long Cuit { get; set; }
@@ -110,12 +110,12 @@ public string WsfeUrlProd { get; set; } = "https://servicios1.afip.gov.ar/wsfev1
 ```
 
 ## Environments (pre-configured in package)
-URL Testing WSAA: https://wsaahomo.afip.gov.ar/ws/services/LoginCms
-URL Testing WSFE: https://wswhomo.afip.gov.ar/wsfev1/service.asmx
+- URL Testing WSAA: https://wsaahomo.afip.gov.ar/ws/services/LoginCms
+- URL Testing WSFE: https://wswhomo.afip.gov.ar/wsfev1/service.asmx
 
-URL Prod WSAA: https://wsaa.afip.gov.ar/ws/services/LoginCms
-URL Prod WSFE: https://servicios1.afip.gov.ar/wsfev1/service.asmx
+- URL Prod WSAA: https://wsaa.afip.gov.ar/ws/services/LoginCms
+- URL Prod WSFE: https://servicios1.afip.gov.ar/wsfev1/service.asmx
 
 ## WSDL (used to build the package)
-AFIP LoginCms https://wsaahomo.afip.gov.ar/ws/services/LoginCms?wsdl
-AFIP WSFE https://wswhomo.afip.gov.ar/wsfev1/service.asmx?wsdl
+- AFIP LoginCms https://wsaahomo.afip.gov.ar/ws/services/LoginCms?wsdl
+- AFIP WSFE https://wswhomo.afip.gov.ar/wsfev1/service.asmx?wsdl
