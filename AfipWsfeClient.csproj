@@ -10,6 +10,8 @@
     <RepositoryUrl>https://github.com/tecnocode-sa/afipwsfeclient</RepositoryUrl>
     <PackageProjectUrl>https://github.com/tecnocode-sa/afipwsfeclient</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
